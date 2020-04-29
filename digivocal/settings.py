@@ -122,8 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-FACEBOOK_APP_ID=str('1089935714699824')
-FACEBOOK_APP_SECRET   = str('7f4cb7ecef68ab0107969aa9f524a2b1')
+# FACEBOOK_APP_ID=str('1089935714699824')
+# FACEBOOK_APP_SECRET   = str('7f4cb7ecef68ab0107969aa9f524a2b1')
 AUTHENTICATION_BACKENDS = (
     'django_facebook.auth_backends.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',
