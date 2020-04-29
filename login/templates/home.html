@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% block content  %}
+    {% if messages %}
+        {%  for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {%  endif %}
+{%  for things in a1 %}
+<li>
+    <ul>
+         <a href="{% url 'edit' things.id %}">{{ things.username }}</a> || {{ things.password }} || {{ things.checked }}  <a href="{% url 'delete' things.id %}">Delete</a>
+    </ul>
+</li>
+ {% endfor %}
+{% endblock %}
+
+
+    <form method="post">
+        {% csrf_token %}
+        <div>
+
+            <label>Username</label>
+
+            <input name="username" type="text" placeholder="Place your name">
+        </div>
+        <div>
+
+            <label>Password</label>
+
+            <input name="password" type="text" placeholder="Place your password">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
